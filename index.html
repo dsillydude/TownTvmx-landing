@@ -170,7 +170,6 @@
     const swiper = new Swiper('.swiper', {
       grabCursor: true,
       loop: true,
-      spaceBetween: 20,
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -180,19 +179,22 @@
         prevEl: '.swiper-button-prev',
       },
       breakpoints: {
-        // when window width is >= 320px
+        // Base settings for mobile (320px and up)
         320: {
-          slidesPerView: 1.2,
+          slidesPerView: 1,
+          spaceBetween: 16,
           centeredSlides: true,
         },
-        // when window width is >= 768px
+        // For tablets (768px and up)
         768: {
-          slidesPerView: 3,
+          slidesPerView: 2.5,
+          spaceBetween: 20,
           centeredSlides: false,
         },
-        // when window width is >= 1024px
+        // For desktops (1024px and up)
         1024: {
-          slidesPerView: 2.5,
+          slidesPerView: 3,
+          spaceBetween: 24,
           centeredSlides: false,
         }
       }
