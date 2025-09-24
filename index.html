@@ -20,14 +20,8 @@
     /* Custom styles to enhance Tailwind */
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: #ffffff; 
-      color: #1f2937; /* Darker gray for better contrast */
-    }
-
-    /* A subtle background pattern for texture */
-    .pattern-bg {
-      background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-      background-size: 16px 16px;
+      background-color: #f9fafb; /* Light gray background for contrast */
+      color: #1f2937;
     }
 
     /* Custom shadow for a softer look */
@@ -44,130 +38,131 @@
       color: #f97316;
       background-color: rgba(255, 255, 255, 0.8);
       border-radius: 9999px;
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     }
      .swiper-button-next:after, .swiper-button-prev:after {
-      font-size: 20px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body class="antialiased">
 
-  <div class="pattern-bg">
-    <!-- Hero Section with a Split Layout -->
-    <header class="container mx-auto px-6 py-16 md:py-24">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <!-- Left Column: Text content - NOW A FLEX CONTAINER FOR SOLID CENTERING -->
-        <div class="text-center lg:text-left">
-          <div class="inline-flex items-center gap-4 mb-6">
-            <img src="https://i.postimg.cc/VsrB3FZ0/20250923-1726-Town-Tv-Max-Logo-simple-compose-01k5whq9waexst7txrphbr1q9d.png" class="w-20 h-20 rounded-2xl custom-shadow" alt="Town Tv Max App Logo">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 tracking-tight">Town Tv Max</h1>
-          </div>
-          <p class="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0">
-            Kitovu kikuu cha chaneli 1000+ za moja kwa moja, michezo, habari, na filamu. Burudani yako, yote sehemu moja.
-          </p>
-          
-          <!-- Download Button -->
-          <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/towntvmax.apk" class="inline-block bg-orange-500 text-white font-bold text-lg px-8 py-4 rounded-lg shadow-lg shadow-orange-500/30 transition-all duration-300 ease-in-out hover:bg-orange-600 hover:-translate-y-1" download>
-            Pakua Sasa
-          </a>
+  <!-- Main container to enforce mobile-only width -->
+  <main class="w-full max-w-md mx-auto bg-white">
 
-          <!-- Social Proof Section -->
-          <div class="mt-12 flex w-fit mx-auto lg:mx-0 justify-center lg:justify-start items-center gap-x-6 sm:gap-x-8 text-sm text-gray-500">
-            <div class="text-center">
-              <div class="font-bold text-lg text-gray-800">1M+</div>
-              <div>Upakuaji</div>
+    <div class="pattern-bg" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 16px 16px;">
+      <!-- Hero Section -->
+      <header class="px-6 pt-12 pb-10">
+        <div class="flex flex-col gap-10 items-center">
+          <!-- Text content -->
+          <div class="flex flex-col items-center text-center">
+            <div class="flex items-center gap-4 mb-5">
+              <img src="https://i.postimg.cc/VsrB3FZ0/20250923-1726-Town-Tv-Max-Logo-simple-compose-01k5whq9waexst7txrphbr1q9d.png" class="w-16 h-16 rounded-2xl custom-shadow" alt="Town Tv Max App Logo">
+              <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">Town Tv Max</h1>
             </div>
-            <div class="text-center">
-              <div class="text-yellow-500 text-lg">★★★★☆</div>
-              <div>200k Maoni</div>
-            </div>
-             <div class="text-center">
-              <div class="font-bold text-lg text-gray-800 border-2 border-gray-400 px-2 rounded">4+</div>
-              <div>Iliyokadiriwa</div>
-            </div>
-          </div>
-        </div>
+            <p class="text-base text-gray-600 mb-6 max-w-sm">
+              Kitovu kikuu cha chaneli 1000+ za moja kwa moja, michezo, habari, na filamu. Burudani yako, yote sehemu moja.
+            </p>
+            
+            <!-- Download Button -->
+            <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/towntvmax.apk" class="inline-block bg-orange-500 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg shadow-orange-500/30 transition-all duration-300 ease-in-out hover:bg-orange-600 hover:-translate-y-1" download>
+              Pakua Sasa
+            </a>
 
-        <!-- Right Column: Screenshots Carousel -->
-        <div class="w-full max-w-2xl mx-auto lg:max-w-none">
-          <div class="swiper relative">
-            <div class="swiper-wrapper py-4">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="https://i.postimg.cc/8CLB7kWd/Whats-App-Image-2025-09-24-at-08-16-05.jpg" alt="Picha ya skrini ya PlayTv Max 1" class="rounded-2xl w-full custom-shadow"></div>
-              <div class="swiper-slide"><img src="https://i.postimg.cc/t4ZzHN4M/Whats-App-Image-2025-09-24-at-08-16-06-1.jpg" alt="Picha ya skrini ya PlayTv Max 2" class="rounded-2xl w-full custom-shadow"></div>
-              <div class="swiper-slide"><img src="https://i.postimg.cc/RF91KrQk/Whats-App-Image-2025-09-24-at-08-16-07.jpg" alt="Picha ya skrini ya PlayTv Max 3" class="rounded-2xl w-full custom-shadow"></div>
-              <div class="swiper-slide"><img src="https://i.postimg.cc/630rhHMy/Whats-App-Image-2025-09-24-at-08-16-04.jpg" alt="Picha ya skrini ya PlayTv Max 4" class="rounded-2xl w-full custom-shadow"></div>
-              <div class="swiper-slide"><img src="https://i.postimg.cc/Cx3sMnZL/Whats-App-Image-2025-09-24-at-08-16-06.jpg" alt="Picha ya skrini ya PlayTv Max 4" class="rounded-2xl w-full custom-shadow"></div>
+            <!-- Social Proof Section -->
+            <div class="mt-10 flex w-full justify-around items-center text-sm text-gray-500">
+              <div class="text-center">
+                <div class="font-bold text-base text-gray-800">1M+</div>
+                <div class="text-xs">Upakuaji</div>
+              </div>
+              <div class="text-center">
+                <div class="text-yellow-500 text-base">★★★★☆</div>
+                <div class="text-xs">200k Maoni</div>
+              </div>
+               <div class="text-center">
+                <div class="font-bold text-base text-gray-800 border-2 border-gray-400 px-2 rounded">4+</div>
+                <div class="text-xs">Iliyokadiriwa</div>
+              </div>
             </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination mt-4 !relative"></div>
-             <!-- Add Navigation -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
           </div>
-        </div>
-      </div>
-    </header>
-  </div>
 
-  <!-- Features Section -->
-  <section class="py-16 md:py-24 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto">
-        <h2 class="text-4xl font-bold text-gray-900">Kila Kitu Unachohitaji Kutiririsha</h2>
-        <p class="mt-4 text-lg text-gray-600">Town Tv Max imejaa vipengele vinavyofanya utazamaji wako uwe rahisi na wa kufurahisha.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-        <!-- Feature Card 1 -->
-        <div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
-          <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+          <!-- Screenshots Carousel -->
+          <div class="w-full">
+            <div class="swiper relative">
+              <div class="swiper-wrapper py-4">
+                <!-- Slides -->
+                <div class="swiper-slide"><img src="https://i.postimg.cc/8CLB7kWd/Whats-App-Image-2025-09-24-at-08-16-05.jpg" alt="Picha ya skrini 1" class="rounded-xl w-full custom-shadow"></div>
+                <div class="swiper-slide"><img src="https://i.postimg.cc/t4ZzHN4M/Whats-App-Image-2025-09-24-at-08-16-06-1.jpg" alt="Picha ya skrini 2" class="rounded-xl w-full custom-shadow"></div>
+                <div class="swiper-slide"><img src="https://i.postimg.cc/RF91KrQk/Whats-App-Image-2025-09-24-at-08-16-07.jpg" alt="Picha ya skrini 3" class="rounded-xl w-full custom-shadow"></div>
+                <div class="swiper-slide"><img src="https://i.postimg.cc/630rhHMy/Whats-App-Image-2025-09-24-at-08-16-04.jpg" alt="Picha ya skrini 4" class="rounded-xl w-full custom-shadow"></div>
+                <div class="swiper-slide"><img src="https://i.postimg.cc/Cx3sMnZL/Whats-App-Image-2025-09-24-at-08-16-06.jpg" alt="Picha ya skrini 5" class="rounded-xl w-full custom-shadow"></div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination mt-4 !relative"></div>
+            </div>
           </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Chaneli 6000+ za Moja kwa Moja</h3>
-          <p class="text-gray-600 text-sm">Chaneli za kimataifa katika ubora wa HD kiganjani mwako.</p>
         </div>
-        <!-- Feature Card 2 -->
-        <div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
-           <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Filamu na Burudani</h3>
-          <p class="text-gray-600 text-sm">Filamu na vipindi unapohitaji kwa burudani isiyo na mwisho.</p>
-        </div>
-        <!-- Feature Card 3 -->
-        <div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
-           <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Michezo na Habari</h3>
-          <p class="text-gray-600 text-sm">Usikose tukio lolote la michezo na habari za moja kwa moja.</p>
-        </div>
-        <!-- Feature Card 4 -->
-        <div class="bg-white p-6 rounded-xl border border-gray-200 text-center">
-           <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.745 3.745 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
-          </div>
-          <h3 class="text-lg font-bold text-gray-900 mb-2">Rahisi na Rafiki</h3>
-          <p class="text-gray-600 text-sm">Muundo rahisi kwa matumizi yasiyo na kikwazo.</p>
-        </div>
-      </div>
+      </header>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <p class="text-gray-500">© 2025 Town Tv Max Corp • Haki Zote Zimehifadhiwa</p>
-    </div>
-  </footer>
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="px-6">
+        <div class="text-center max-w-sm mx-auto">
+          <h2 class="text-3xl font-bold text-gray-900">Kila Kitu Unachohitaji</h2>
+          <p class="mt-3 text-base text-gray-600">Vipengele vinavyofanya utazamaji wako uwe rahisi na wa kufurahisha.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
+          <!-- Feature Card 1 -->
+          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
+            <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-900 mb-1">6000+ Chaneli</h3>
+            <p class="text-gray-600 text-sm">HD kiganjani mwako.</p>
+          </div>
+          <!-- Feature Card 2 -->
+          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
+             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-900 mb-1">Filamu & Burudani</h3>
+            <p class="text-gray-600 text-sm">Burudani isiyo na mwisho.</p>
+          </div>
+          <!-- Feature Card 3 -->
+          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
+             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-900 mb-1">Michezo & Habari</h3>
+            <p class="text-gray-600 text-sm">Matukio yote moja kwa moja.</p>
+          </div>
+          <!-- Feature Card 4 -->
+          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
+             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
+               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.745 3.745 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+            </div>
+            <h3 class="text-base font-bold text-gray-900 mb-1">Rahisi na Rafiki</h3>
+            <p class="text-gray-600 text-sm">Muundo rahisi na wa kisasa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-white">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-500 text-sm">© 2025 Town Tv Max Corp • Haki Zote Zimehifadhiwa</p>
+      </div>
+    </footer>
+  </main>
 
   <!-- Swiper.js script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Initialize Swiper
+    // Initialize Swiper for a mobile-only view
     const swiper = new Swiper('.swiper', {
       grabCursor: true,
       loop: true,
@@ -175,34 +170,12 @@
         el: '.swiper-pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      breakpoints: {
-        // Base settings for mobile (320px and up)
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 16,
-          centeredSlides: true,
-        },
-        // For tablets (768px and up)
-        768: {
-          slidesPerView: 2.5,
-          spaceBetween: 20,
-          centeredSlides: false,
-        },
-        // For desktops (1024px and up)
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 24,
-          centeredSlides: false,
-        }
-      }
+      slidesPerView: 1,
+      spaceBetween: 16,
+      centeredSlides: true,
     });
   </script>
 
 </body>
 </html>
-
 
