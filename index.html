@@ -68,7 +68,7 @@
             
             <!-- Download Button -->
             <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/towntvmax.apk" class="inline-block bg-orange-500 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg shadow-orange-500/30 transition-all duration-300 ease-in-out hover:bg-orange-600 hover:-translate-y-1" download>
-              Download 
+              Pakua Sasa
             </a>
 
             <!-- Social Proof Section -->
@@ -101,6 +101,9 @@
               </div>
               <!-- Add Pagination -->
               <div class="swiper-pagination mt-4 !relative"></div>
+              <!-- Add Navigation -->
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
             </div>
           </div>
         </div>
@@ -170,8 +173,12 @@
         el: '.swiper-pagination',
         clickable: true,
       },
-      slidesPerView: 1,
-      spaceBetween: 16,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      slidesPerView: 2.5,
+      spaceBetween: 12,
       centeredSlides: true,
     });
   </script>
