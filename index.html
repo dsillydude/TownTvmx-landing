@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>The Sports HD - Live Football & Entertainment</title>
+  <title>The Sports HD - Ligi Zote, Burudani Bure</title>
   
   <script src="https://cdn.tailwindcss.com"></script>
   
@@ -61,14 +61,14 @@
 
     /* Phone Frame CSS */
     .phone-frame {
-      border: 14px solid #1e293b;
-      border-radius: 40px;
+      border: 12px solid #1e293b;
+      border-radius: 35px;
       overflow: hidden;
       position: relative;
       background: #000;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
       aspect-ratio: 9/19.5;
-      max-width: 300px;
+      max-width: 280px; /* Slightly smaller to fit layout better */
       margin: 0 auto;
     }
     .phone-notch {
@@ -77,7 +77,7 @@
       left: 50%;
       transform: translateX(-50%);
       width: 40%;
-      height: 25px;
+      height: 20px;
       background: #1e293b;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;
@@ -96,72 +96,76 @@
 <body class="bg-brand-dark text-white overflow-x-hidden selection:bg-brand-orange selection:text-white">
 
   <nav class="fixed w-full z-50 glass border-b border-white/10">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-7xl mx-auto px-6 h-16 md:h-20 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-10 h-10 rounded-lg shadow-lg" alt="Logo">
-        <span class="text-xl font-bold tracking-tight">The Sports<span class="text-brand-orange">HD</span></span>
+        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-8 h-8 md:w-10 md:h-10 rounded-lg shadow-lg" alt="Logo">
+        <span class="text-lg md:text-xl font-bold tracking-tight">The Sports<span class="text-brand-orange">HD</span></span>
       </div>
+      <a href="#download" class="md:hidden bg-brand-orange text-white px-4 py-1.5 rounded-full text-xs font-bold">
+        Download
+      </a>
       <a href="#download" class="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 transition px-5 py-2 rounded-full font-medium text-sm">
         <i class="fab fa-android text-green-400"></i> APK v4.0
       </a>
     </div>
   </nav>
 
-  <section class="relative pt-32 pb-20 mesh-bg min-h-screen flex items-center">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+  <section class="relative pt-24 pb-12 md:pt-32 md:pb-20 mesh-bg min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8 items-center">
       
-      <div class="text-center lg:text-left order-2 lg:order-1">
-        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-sm font-semibold mb-6 animate-fade-in">
-          <span class="relative flex h-3 w-3">
+      <div class="text-center lg:text-left order-1">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-semibold mb-4 animate-fade-in">
+          <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-orange"></span>
           </span>
-          Live Streaming App
+          Live Streaming
         </div>
         
-        <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
-          Mpira Pesa, <br>
+        <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-tight mb-4">
+          Ligi Zote, <br>
           <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">Burudani Bure.</span>
         </h1>
         
-        <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
-          Tazama EPL, NBC Premier League, La Liga na chaneli 1000+ za kimataifa bila malipo. Ubora wa HD bila kukwama.
+        <p class="text-gray-400 text-base md:text-lg mb-6 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+          Tazama EPL, NBC Premier League, La Liga na chaneli 1000+ za kimataifa bila malipo. HD bila kukwama.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8 lg:mb-12">
           <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/TheSportsHD.apk" 
-             class="group relative px-8 py-4 bg-gradient-to-r from-brand-orange to-red-600 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 hover:shadow-orange-600/40 transition-all hover:-translate-y-1 overflow-hidden" download>
+             class="group relative px-8 py-3.5 bg-gradient-to-r from-brand-orange to-red-600 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/30 hover:shadow-orange-600/50 transition-all hover:-translate-y-1 overflow-hidden w-full sm:w-auto animate-pulse-slow" download>
             <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
             <div class="flex items-center justify-center gap-3">
               <i class="fas fa-download"></i>
               <span>Download App</span>
             </div>
           </a>
-          <a href="#features" class="px-8 py-4 glass rounded-xl font-semibold hover:bg-white/5 transition flex items-center justify-center gap-2">
+          <a href="#features" class="hidden sm:flex px-8 py-3.5 glass rounded-xl font-semibold hover:bg-white/5 transition items-center justify-center gap-2">
             <i class="fas fa-play-circle"></i> Jifunze Zaidi
           </a>
         </div>
 
-        <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-gray-400 border-t border-white/10 pt-8">
+        <div class="hidden sm:flex items-center justify-center lg:justify-start gap-8 text-sm text-gray-400 border-t border-white/10 pt-6">
           <div class="flex flex-col">
-            <span class="text-2xl font-bold text-white">1M+</span>
-            <span>Users</span>
+            <span class="text-xl font-bold text-white">1M+</span>
+            <span class="text-xs">Users</span>
           </div>
-          <div class="w-px h-8 bg-white/10"></div>
+          <div class="w-px h-6 bg-white/10"></div>
           <div class="flex flex-col">
-            <span class="text-2xl font-bold text-white">4.8</span>
-            <span>Rating</span>
+            <span class="text-xl font-bold text-white">4.8</span>
+            <span class="text-xs">Rating</span>
           </div>
-          <div class="w-px h-8 bg-white/10"></div>
+          <div class="w-px h-6 bg-white/10"></div>
           <div class="flex flex-col">
-            <span class="text-2xl font-bold text-white">Free</span>
-            <span>Forever</span>
+            <span class="text-xl font-bold text-white">Free</span>
+            <span class="text-xs">Forever</span>
           </div>
         </div>
       </div>
 
-      <div class="order-1 lg:order-2 relative z-10 animate-float">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[600px] bg-brand-orange/20 blur-[100px] -z-10"></div>
+      <div class="order-2 lg:order-2 relative z-10 animate-float">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[500px] bg-brand-orange/20 blur-[80px] -z-10"></div>
         
         <div class="phone-frame">
           <div class="phone-notch"></div>
@@ -178,47 +182,47 @@
     </div>
   </section>
 
-  <section id="features" class="py-24 bg-brand-dark relative">
+  <section id="features" class="py-20 bg-brand-dark relative">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Kila Kitu Kiganjani Mwako</h2>
-        <p class="text-gray-400">App bora zaidi kwa wapenzi wa michezo Afrika Mashariki.</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Kila Kitu Kiganjani</h2>
+        <p class="text-gray-400">App bora zaidi kwa wapenzi wa michezo.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
-          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:scale-110 transition">
+        <div class="glass p-6 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-12 h-12 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-xl mb-4 group-hover:scale-110 transition">
             <i class="fas fa-futbol"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Live Sports</h3>
-          <p class="text-gray-400 leading-relaxed">Tazama ligi zote kubwa duniani (EPL, UEFA, La Liga) kwa lugha ya Kiswahili na Kiingereza.</p>
+          <h3 class="text-lg font-bold mb-2">Live Sports</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Tazama ligi zote kubwa duniani (EPL, UEFA, La Liga) kwa lugha ya Kiswahili.</p>
         </div>
 
-        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
-          <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 transition">
+        <div class="glass p-6 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-xl mb-4 group-hover:scale-110 transition">
             <i class="fas fa-tv"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">6000+ Channels</h3>
-          <p class="text-gray-400 leading-relaxed">Chaneli za nyumbani (Azam, DSTV, Startimes) na za kimataifa bila malipo yoyote.</p>
+          <h3 class="text-lg font-bold mb-2">6000+ Channels</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Chaneli za nyumbani na za kimataifa bila malipo yoyote.</p>
         </div>
 
-        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
-          <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+        <div class="glass p-6 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 text-xl mb-4 group-hover:scale-110 transition">
             <i class="fas fa-film"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3">Movies & Series</h3>
-          <p class="text-gray-400 leading-relaxed">Maktaba kubwa ya filamu za hivi karibuni, Bongo Movie, na Series za Netflix.</p>
+          <h3 class="text-lg font-bold mb-2">Movies & Series</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">Maktaba kubwa ya filamu za hivi karibuni na Bongo Movie.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-brand-card/50 border-y border-white/5">
+  <section class="py-16 bg-brand-card/50 border-y border-white/5">
     <div class="max-w-4xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-center gap-12">
+      <div class="flex flex-col md:flex-row items-center gap-10">
         <div class="flex-1">
-          <h2 class="text-3xl font-bold mb-6">Jinsi ya Ku-install (APK)</h2>
-          <div class="space-y-6">
+          <h2 class="text-2xl font-bold mb-6">Jinsi ya Ku-install (APK)</h2>
+          <div class="space-y-5">
             <div class="flex gap-4">
               <div class="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center font-bold text-sm shrink-0">1</div>
               <div>
@@ -230,7 +234,7 @@
               <div class="w-8 h-8 rounded-full bg-brand-card border border-white/20 flex items-center justify-center font-bold text-sm shrink-0">2</div>
               <div>
                 <h4 class="font-bold mb-1">Ruhusu Installation</h4>
-                <p class="text-gray-400 text-sm">Nenda Settings > Security na ruhusu "Install from Unknown Sources".</p>
+                <p class="text-gray-400 text-sm">Ruhusu "Install from Unknown Sources" kwenye settings.</p>
               </div>
             </div>
             <div class="flex gap-4">
@@ -242,25 +246,22 @@
             </div>
           </div>
         </div>
-        <div class="flex-1 text-center p-8 glass rounded-2xl border border-dashed border-white/20">
+        <div class="flex-1 w-full text-center p-8 glass rounded-2xl border border-dashed border-white/20">
           <i class="fas fa-shield-virus text-5xl text-green-400 mb-4"></i>
           <h3 class="text-xl font-bold mb-2">100% Salama</h3>
-          <p class="text-gray-400 text-sm mb-6">Faili hili limekaguliwa na halina virusi vyovyote. Ni salama kwa simu yako.</p>
+          <p class="text-gray-400 text-sm mb-6">Faili hili limekaguliwa na halina virusi vyovyote.</p>
           <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/TheSportsHD.apk" class="text-brand-orange hover:underline font-medium" id="download">Download APK Now</a>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="py-12 bg-brand-dark border-t border-white/10 text-center">
+  <footer class="py-8 bg-brand-dark border-t border-white/10 text-center">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="flex justify-center items-center gap-2 mb-6">
-        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-8 h-8 rounded opacity-80" alt="Logo">
-        <span class="font-bold text-lg text-white/80">The SportsHD</span>
+      <div class="flex justify-center items-center gap-2 mb-4">
+        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-6 h-6 rounded opacity-80" alt="Logo">
+        <span class="font-bold text-base text-white/80">The SportsHD</span>
       </div>
-      <p class="text-gray-500 text-sm mb-8">
-        Hatuweki maudhui yoyote kwenye seva zetu. App hii inaunganisha tu na viungo vinavyopatikana mtandaoni.
-      </p>
       <div class="text-gray-600 text-xs">
         &copy; 2026 The SportsHD Inc. All Rights Reserved.
       </div>
@@ -277,7 +278,7 @@
         disableOnInteraction: false,
       },
       loop: true,
-      effect: "fade", // Fade effect looks best inside the phone frame
+      effect: "fade", 
     });
   </script>
 </body>
