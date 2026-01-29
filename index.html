@@ -1,188 +1,284 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="sw" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>The sports HD - Kitovu Chako Kikuu cha Utiririshaji</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>The Sports HD - Live Football & Entertainment</title>
   
-  <!-- Tailwind CSS for modern styling -->
   <script src="https://cdn.tailwindcss.com"></script>
   
-  <!-- Swiper.js for the screenshot carousel -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              orange: '#FF5722',
+              dark: '#0F172A',
+              card: '#1E293B',
+              light: '#F8FAFC'
+            }
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    /* Custom styles to enhance Tailwind */
-    body {
-      font-family: 'Manrope', sans-serif;
-      background-color: #f9fafb; /* Light gray background for contrast */
-      color: #1f2937;
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0F172A; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FF5722; }
+
+    /* Glass Effect */
+    .glass {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    /* Custom shadow for a softer look */
-    .custom-shadow {
-       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* Phone Frame CSS */
+    .phone-frame {
+      border: 14px solid #1e293b;
+      border-radius: 40px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      aspect-ratio: 9/19.5;
+      max-width: 300px;
+      margin: 0 auto;
     }
-    
-    /* Swiper custom styles for the new design */
-    .swiper-pagination-bullet-active {
-      background-color: #f97316 !important;
-      transform: scale(1.2);
+    .phone-notch {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 25px;
+      background: #1e293b;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      z-index: 20;
     }
-    .swiper-button-next, .swiper-button-prev {
-      color: #f97316;
-      background-color: rgba(255, 255, 255, 0.8);
-      border-radius: 9999px;
-      width: 40px;
-      height: 40px;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
-     .swiper-button-next:after, .swiper-button-prev:after {
-      font-size: 18px;
+
+    /* Mesh Background */
+    .mesh-bg {
+      background-color: #0F172A;
+      background-image: 
+        radial-gradient(at 0% 0%, hsla(15,91%,61%,0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(205,91%,61%,0.1) 0px, transparent 50%);
     }
   </style>
 </head>
-<body class="antialiased">
+<body class="bg-brand-dark text-white overflow-x-hidden selection:bg-brand-orange selection:text-white">
 
-  <!-- Main container to enforce mobile-only width -->
-  <main class="w-full max-w-md mx-auto bg-white">
-
-    <div class="pattern-bg" style="background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 16px 16px;">
-      <!-- Hero Section -->
-      <header class="px-6 pt-12 pb-10">
-        <div class="flex flex-col gap-10 items-center">
-          <!-- Text content -->
-          <div class="flex flex-col items-center text-center">
-            <div class="flex items-center gap-4 mb-5">
-              <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-16 h-16 rounded-2xl custom-shadow" alt="Town Tv Max App Logo">
-              <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">The SportsHD</h1>
-            </div>
-            <p class="text-base text-gray-600 mb-6 max-w-sm">
-              Kitovu kikuu cha chaneli 1000+ za moja kwa moja, michezo, habari, na filamu. Burudani yako, yote sehemu moja.
-            </p>
-            
-            <!-- Download Button -->
-            <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/TheSportsHD.apk" class="inline-block bg-orange-500 text-white font-bold text-lg px-8 py-3 rounded-lg shadow-lg shadow-orange-500/30 transition-all duration-300 ease-in-out hover:bg-orange-600 hover:-translate-y-1" download>
-              Download
-            </a>
-
-            <!-- Social Proof Section -->
-            <div class="mt-10 flex w-full justify-around items-center text-sm text-gray-500">
-              <div class="text-center">
-                <div class="font-bold text-base text-gray-800">1M+</div>
-                <div class="text-xs">Upakuaji</div>
-              </div>
-              <div class="text-center">
-                <div class="text-yellow-500 text-base">★★★★☆</div>
-                <div class="text-xs">200k Maoni</div>
-              </div>
-               <div class="text-center">
-                <div class="font-bold text-base text-gray-800 border-2 border-gray-400 px-2 rounded">4+</div>
-                <div class="text-xs">Iliyokadiriwa</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Screenshots Carousel -->
-          <div class="w-full">
-            <div class="swiper relative">
-              <div class="swiper-wrapper py-4">
-                <!-- Slides -->
-                <div class="swiper-slide"><img src="https://i.postimg.cc/8CLB7kWd/Whats-App-Image-2025-09-24-at-08-16-05.jpg" alt="Picha ya skrini 1" class="rounded-xl w-full custom-shadow"></div>
-                <div class="swiper-slide"><img src="https://i.postimg.cc/t4ZzHN4M/Whats-App-Image-2025-09-24-at-08-16-06-1.jpg" alt="Picha ya skrini 2" class="rounded-xl w-full custom-shadow"></div>
-                <div class="swiper-slide"><img src="https://i.postimg.cc/RF91KrQk/Whats-App-Image-2025-09-24-at-08-16-07.jpg" alt="Picha ya skrini 3" class="rounded-xl w-full custom-shadow"></div>
-                <div class="swiper-slide"><img src="https://i.postimg.cc/630rhHMy/Whats-App-Image-2025-09-24-at-08-16-04.jpg" alt="Picha ya skrini 4" class="rounded-xl w-full custom-shadow"></div>
-                <div class="swiper-slide"><img src="https://i.postimg.cc/Cx3sMnZL/Whats-App-Image-2025-09-24-at-08-16-06.jpg" alt="Picha ya skrini 5" class="rounded-xl w-full custom-shadow"></div>
-              </div>
-              <!-- Add Pagination -->
-              <div class="swiper-pagination mt-4 !relative"></div>
-              <!-- Add Navigation -->
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
-        </div>
-      </header>
+  <nav class="fixed w-full z-50 glass border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-10 h-10 rounded-lg shadow-lg" alt="Logo">
+        <span class="text-xl font-bold tracking-tight">The Sports<span class="text-brand-orange">HD</span></span>
+      </div>
+      <a href="#download" class="hidden md:flex items-center gap-2 bg-white/10 hover:bg-white/20 transition px-5 py-2 rounded-full font-medium text-sm">
+        <i class="fab fa-android text-green-400"></i> APK v4.0
+      </a>
     </div>
+  </nav>
 
-    <!-- Features Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="px-6">
-        <div class="text-center max-w-sm mx-auto">
-          <h2 class="text-3xl font-bold text-gray-900">Kila Kitu Unachohitaji</h2>
-          <p class="mt-3 text-base text-gray-600">Vipengele vinavyofanya utazamaji wako uwe rahisi na wa kufurahisha.</p>
+  <section class="relative pt-32 pb-20 mesh-bg min-h-screen flex items-center">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      
+      <div class="text-center lg:text-left order-2 lg:order-1">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-sm font-semibold mb-6 animate-fade-in">
+          <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-orange"></span>
+          </span>
+          Live Streaming App
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-10">
-          <!-- Feature Card 1 -->
-          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
-            <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+        
+        <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+          Mpira Pesa, <br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-orange-400">Burudani Bure.</span>
+        </h1>
+        
+        <p class="text-gray-400 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
+          Tazama EPL, NBC Premier League, La Liga na chaneli 1000+ za kimataifa bila malipo. Ubora wa HD bila kukwama.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/TheSportsHD.apk" 
+             class="group relative px-8 py-4 bg-gradient-to-r from-brand-orange to-red-600 rounded-xl font-bold text-lg shadow-xl shadow-orange-600/20 hover:shadow-orange-600/40 transition-all hover:-translate-y-1 overflow-hidden" download>
+            <div class="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 skew-x-12 -ml-4"></div>
+            <div class="flex items-center justify-center gap-3">
+              <i class="fas fa-download"></i>
+              <span>Download App</span>
             </div>
-            <h3 class="text-base font-bold text-gray-900 mb-1">6000+ Chaneli</h3>
-            <p class="text-gray-600 text-sm">HD kiganjani mwako.</p>
+          </a>
+          <a href="#features" class="px-8 py-4 glass rounded-xl font-semibold hover:bg-white/5 transition flex items-center justify-center gap-2">
+            <i class="fas fa-play-circle"></i> Jifunze Zaidi
+          </a>
+        </div>
+
+        <div class="mt-12 flex items-center justify-center lg:justify-start gap-8 text-sm text-gray-400 border-t border-white/10 pt-8">
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-white">1M+</span>
+            <span>Users</span>
           </div>
-          <!-- Feature Card 2 -->
-          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
-             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
-            </div>
-            <h3 class="text-base font-bold text-gray-900 mb-1">Filamu & Burudani</h3>
-            <p class="text-gray-600 text-sm">Burudani isiyo na mwisho.</p>
+          <div class="w-px h-8 bg-white/10"></div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-white">4.8</span>
+            <span>Rating</span>
           </div>
-          <!-- Feature Card 3 -->
-          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
-             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
-            </div>
-            <h3 class="text-base font-bold text-gray-900 mb-1">Michezo & Habari</h3>
-            <p class="text-gray-600 text-sm">Matukio yote moja kwa moja.</p>
-          </div>
-          <!-- Feature Card 4 -->
-          <div class="bg-white p-5 rounded-xl border border-gray-200 text-center">
-             <div class="bg-orange-100 text-orange-600 rounded-lg w-12 h-12 flex items-center justify-center mx-auto mb-4">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.745 3.745 0 013.296-1.043A3.745 3.745 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.745 3.745 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
-            </div>
-            <h3 class="text-base font-bold text-gray-900 mb-1">Rahisi na Rafiki</h3>
-            <p class="text-gray-600 text-sm">Muundo rahisi na wa kisasa.</p>
+          <div class="w-px h-8 bg-white/10"></div>
+          <div class="flex flex-col">
+            <span class="text-2xl font-bold text-white">Free</span>
+            <span>Forever</span>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-8 bg-white">
-      <div class="container mx-auto px-6 text-center">
-        <p class="text-gray-500 text-sm">© 2025 The SportsHD inc • Haki Zote Zimehifadhiwa</p>
+      <div class="order-1 lg:order-2 relative z-10 animate-float">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[600px] bg-brand-orange/20 blur-[100px] -z-10"></div>
+        
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="swiper mySwiper h-full w-full">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="https://i.postimg.cc/8CLB7kWd/Whats-App-Image-2025-09-24-at-08-16-05.jpg" class="w-full h-full object-cover"></div>
+              <div class="swiper-slide"><img src="https://i.postimg.cc/t4ZzHN4M/Whats-App-Image-2025-09-24-at-08-16-06-1.jpg" class="w-full h-full object-cover"></div>
+              <div class="swiper-slide"><img src="https://i.postimg.cc/RF91KrQk/Whats-App-Image-2025-09-24-at-08-16-07.jpg" class="w-full h-full object-cover"></div>
+              <div class="swiper-slide"><img src="https://i.postimg.cc/630rhHMy/Whats-App-Image-2025-09-24-at-08-16-04.jpg" class="w-full h-full object-cover"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </main>
+    </div>
+  </section>
 
-  <!-- Swiper.js script -->
+  <section id="features" class="py-24 bg-brand-dark relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-4">Kila Kitu Kiganjani Mwako</h2>
+        <p class="text-gray-400">App bora zaidi kwa wapenzi wa michezo Afrika Mashariki.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center text-brand-orange text-2xl mb-6 group-hover:scale-110 transition">
+            <i class="fas fa-futbol"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Live Sports</h3>
+          <p class="text-gray-400 leading-relaxed">Tazama ligi zote kubwa duniani (EPL, UEFA, La Liga) kwa lugha ya Kiswahili na Kiingereza.</p>
+        </div>
+
+        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 transition">
+            <i class="fas fa-tv"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">6000+ Channels</h3>
+          <p class="text-gray-400 leading-relaxed">Chaneli za nyumbani (Azam, DSTV, Startimes) na za kimataifa bila malipo yoyote.</p>
+        </div>
+
+        <div class="glass p-8 rounded-2xl hover:bg-white/5 transition duration-300 group">
+          <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 transition">
+            <i class="fas fa-film"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Movies & Series</h3>
+          <p class="text-gray-400 leading-relaxed">Maktaba kubwa ya filamu za hivi karibuni, Bongo Movie, na Series za Netflix.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-brand-card/50 border-y border-white/5">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-6">Jinsi ya Ku-install (APK)</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-orange flex items-center justify-center font-bold text-sm shrink-0">1</div>
+              <div>
+                <h4 class="font-bold mb-1">Download APK</h4>
+                <p class="text-gray-400 text-sm">Bonyeza kitufe cha 'Download' na subiri imalize.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-card border border-white/20 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+              <div>
+                <h4 class="font-bold mb-1">Ruhusu Installation</h4>
+                <p class="text-gray-400 text-sm">Nenda Settings > Security na ruhusu "Install from Unknown Sources".</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-8 h-8 rounded-full bg-brand-card border border-white/20 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+              <div>
+                <h4 class="font-bold mb-1">Fungua App</h4>
+                <p class="text-gray-400 text-sm">Install na anza kufurahia burudani bure!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 text-center p-8 glass rounded-2xl border border-dashed border-white/20">
+          <i class="fas fa-shield-virus text-5xl text-green-400 mb-4"></i>
+          <h3 class="text-xl font-bold mb-2">100% Salama</h3>
+          <p class="text-gray-400 text-sm mb-6">Faili hili limekaguliwa na halina virusi vyovyote. Ni salama kwa simu yako.</p>
+          <a href="https://github.com/dsillydude/TownTvmx-landing/releases/download/townmax/TheSportsHD.apk" class="text-brand-orange hover:underline font-medium" id="download">Download APK Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 bg-brand-dark border-t border-white/10 text-center">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex justify-center items-center gap-2 mb-6">
+        <img src="https://i.postimg.cc/2jQVkTmp/icon.png" class="w-8 h-8 rounded opacity-80" alt="Logo">
+        <span class="font-bold text-lg text-white/80">The SportsHD</span>
+      </div>
+      <p class="text-gray-500 text-sm mb-8">
+        Hatuweki maudhui yoyote kwenye seva zetu. App hii inaunganisha tu na viungo vinavyopatikana mtandaoni.
+      </p>
+      <div class="text-gray-600 text-xs">
+        &copy; 2026 The SportsHD Inc. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Initialize Swiper for a mobile-only view
-    const swiper = new Swiper('.swiper', {
-      grabCursor: true,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      slidesPerView: 2.5,
-      spaceBetween: 12,
+    const swiper = new Swiper(".mySwiper", {
+      spaceBetween: 0,
       centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      loop: true,
+      effect: "fade", // Fade effect looks best inside the phone frame
     });
   </script>
-
 </body>
 </html>
-
